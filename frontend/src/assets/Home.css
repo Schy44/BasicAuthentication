@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #333;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+}
+
+.subtitle strong {
+    color: #0077cc;
+    font-weight: 600;
+}
+
+
+/* Logs */
+.logs {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.log-entry {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.log-entry:last-child {
+    border-bottom: none;
+}
+
+.log-entry .timestamp {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.log-entry .message {
+    font-size: 1rem;
+    color: #333;
+}
+
+.navbar {
+    background-color: #0077cc;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-links a,
+.logout-btn {
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.logout-btn:hover,
+.navbar-links a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    color: #222;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.message-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
