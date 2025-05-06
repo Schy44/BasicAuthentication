@@ -1,19 +1,20 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8;
-    color: #333;
     background: linear-gradient(135deg, #74ebd5, #acb6e5);
-    align-items: center;
-    font-family: 'Segoe UI', sans-serif;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .subtitle strong {
     color: #0077cc;
     font-weight: 600;
 }
-
 
 /* Logs */
 .logs {
@@ -22,7 +23,7 @@ body {
     padding: 2rem;
     background: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .log-entry {
@@ -36,7 +37,7 @@ body {
 }
 
 .log-entry .timestamp {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: #666;
 }
 
@@ -48,10 +49,17 @@ body {
 .navbar {
     background-color: #0077cc;
     padding: 1rem 2rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -62,37 +70,50 @@ body {
 .navbar-links a,
 .logout-btn {
     margin-left: 1rem;
+    margin-right: 80px;
     color: white;
     text-decoration: none;
-    background: none;
-    border: none;
     font-size: 1rem;
     cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .logout-btn:hover,
 .navbar-links a:hover {
     text-decoration: underline;
+    color: #cce7ff;
 }
 
 .hero {
     text-align: center;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    /* Adjust height to account for the navbar */
     padding: 3rem 1rem;
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    background: none;
+    /* Remove the background gradient */
     color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.subtitle {
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
     font-size: 1.2rem;
     color: #555;
 }
 
-.message-box {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+/* Subtitle */
+.subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 1rem;
 }

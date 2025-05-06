@@ -1,16 +1,18 @@
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 const getUserInfo = () => {
     const token = localStorage.getItem("access_token");
     if (!token) return null;
     try {
         const decoded = jwtDecode(token);
-        return decoded;
+        return { username: decoded.username }; // Ensure username is returned
     } catch (err) {
         console.error("Invalid token", err);
         return null;
     }
 };
+
 
 
 const mylogin = async (username, password) => {
@@ -25,6 +27,7 @@ const mylogin = async (username, password) => {
         localStorage.clear();
         localStorage.setItem("access_token", data.access);
         localStorage.setItem("refresh_token", data.refresh);
+        localStorage.setItem("username", data.username);
         window.location.href = "/";
     } catch (error) {
         console.error("Login failed:", error.response?.data || error.message);

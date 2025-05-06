@@ -5,9 +5,14 @@ import "../assets/Home.css";
 
 const Home = () => {
     const [message, setMessage] = useState("Fetching...");
-    const user = getUserInfo(); // get user data from token
+    const [username, setUsername] = useState("Guest");
 
     useEffect(() => {
+        const user = getUserInfo();
+        if (user?.username) {
+            setUsername(user.username);
+        }
+
         const fetchData = async () => {
             const fetchedMessage = await homefetch();
             setMessage(fetchedMessage || "Failed to fetch message");
@@ -29,13 +34,9 @@ const Home = () => {
 
             <section className="hero">
                 <h1>Welcome to the Dashboard</h1>
-                <p className="subtitle">Hello, <strong>{user?.username || "Guest"}</strong> 👋</p>
-                <p className="subtitle">Your personalized message is below</p>
-            </section>
-
-            <section className="message-box">
-                <h3>Username Message:</h3>
-                <p>{message}</p>
+                <p className="subtitle">Hello, <strong>{username}</strong> 👋</p>
+                <p className="subtitle">Your personalized message is below:</p>
+                <p className="message">{message}</p>
             </section>
         </>
     );
